@@ -1,12 +1,12 @@
 import { NavLink, useMatch } from "react-router-dom";
 import { Container, Nav, Navbar } from "react-bootstrap";
-import "./Header.css";
+import "./Header.css"; 
 
 const Header = () => {
   const match = useMatch("/categorie/:category");
 
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="lg" className="mb-4">
       <Container>
         {match && (
           <span className="me-3 fw-bold">
@@ -16,8 +16,8 @@ const Header = () => {
         <Navbar.Brand as={NavLink} to="/">
           Mon Site
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Toggle aria-controls="main-navbar" />
+        <Navbar.Collapse id="main-navbar">
           <Nav className="me-auto">
             <Nav.Link as={NavLink} to="/" end>
               Accueil
