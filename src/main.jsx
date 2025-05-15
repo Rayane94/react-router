@@ -1,14 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router";
+import { createBrowserRouter, RouterProvider, createRoutesFromElements, Route } from "react-router";
 import App from "./App";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Home from "./pages/Home";
+import Category from "./pages/Category";
+import NotFound from "./pages/NotFound";
+import Layout from "./components/Layout";
 
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route element={<Layout />}>
+      <Route path="/" element={<Home />} />
+      <Route path="/categorie/:category" element={<Category />} />
+      <Route path="*" element={<NotFound />} />
+    </Route>
+  )
+);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
