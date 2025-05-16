@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider, createRoutesFromElements, Route } from "react-router";
+import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from "react-router";
+import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 import Home from "./pages/Home";
 import Category from "./pages/Category";
